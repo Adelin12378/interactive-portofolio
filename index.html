@@ -3,25 +3,32 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="/images/clarashtonkutcherclar.jpg">
-        <title>Fun Facts Despre Adelin</title>
+        <link rel="icon" type="image/x-icon" href="/images/meAtSki.jpeg">
+        <title>Interactive Portfolio</title>
     </head>
 
     <body>
         <div class="cursor-outline"></div>
         <div class="cursor-dot"></div>
+        <div id="preloader">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <p id="loader-text">Initializing...</p>
+            </div>
+        </div>
         <header id="home">
-            <h1>Welcome, hi, hello and if I don't see you, have a wonderful day!</h1>
+            <h1>Welcome to my Portfolio!</h1>
             <br>
             <h2>Name: Olteanu Ioan Adelin</h2>
-            <h2>University: University Transilvania of Brasov</h2>
+            <h2>University: University Transilvania of Brașov</h2>
             <h2>Bachelor Degree: Computer Engineering and Computer Science</h2>
             <h2>Year of Study: 2</h2>
-            <h2>Group: 4LF748</h2>
+            <h2>Group: 4LF742</h2>
             <h3 id="darkModeToggle">🌙 Dark Mode</h3>
             <p id="greeting"></p>
             <br>
@@ -30,42 +37,154 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
                 </list>
             </nav>
 
-            <main>
+            <main> <div class="left-column">
                 <section id="about">
                     <h3>About</h3>
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="images/imaginejmchera.jpg" alt="william Dafoe tine 2 portocale in mana si fumeaza o tigara cat de jmecher" loading="lazy" class="img">
+                                <img src="images/coolGuyPoselol.jpeg" alt="me" loading="lazy" class="img">
                             </div>
                             <div class="flip-card-back">
-                                <img src="images/spongebobjmecher.jpg" alt="spongebob e gangster si are bani cat de jmecher" loading="lazy" class="img">
+                                <img src="images/meInBudapest.jpg" alt="me in Budapest" loading="lazy" class="img">
                             </div>
                         </div>
                     </div>
-                    <p>Care este mancarea ta preferata? <br>
-                        A mea este fructul portocaliu numit portocala.
+                    <p>
+                        Currently studying Computer Engineering at Transilvania University of Brașov, I find that my academic interests and musical passions are deeply interlinked. I first discovered my love for engineering when I realized that the gear I use as a musician is built on either digital signal processing (DSP) algorithms or pure analog circuitry. My musical taste is diverse, spanning from Reggae, Funk, Metal, Krautrock, Dance-Punk, Jazz, Hip-Hop, Soul, Acid Rock and many more. I am an active member of a band mainly performing blues, alternative rock, and doom metal. Outside of my studies and music, I am an avid skier and gamer.
                     </p>
+                    <h3>Find me here:</h3>
+                    <ul>
+                        <li><a href="https://github.com/Adelin12378" target="_blank" class="btn-github">GitHub <i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/olteanu-adelin-712644394/" target="_blank" class="btn-linkedin">LinkedIn <i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="https://rateyourmusic.com/~Adelinsefulabani" target="_blank" class="btn-rym">Rate Your Music <i class="fa-solid fa-record-vinyl"></i></a></li>
+                    </ul>
                 </section>
                 <section id="education">
                     <h3>Education</h3>
-                    <p>I finished my high school education at Alexandru Marghiloman High School in Buzau after 4 years.</p>
-                    <p>I am currently a student at Transilvania University of Brasov, Faculty of Computer Engineering and Computer Science.</p>
-                    <p>I am in year 2 of study.</p>
-                    <p>My favourite courses so far are Programming, Data Structures and Algorithms, Signals and Systems, Analog Electronics, Digital Electronics.</p>
-                    <p>The first course that really caught my attention was Programming since I've shown an interest in it since highschool.</p>
-                    <p>Data Structures and Algorithms is a course that I find very interesting because it helps me understand how to solve problems efficiently and digs deeper what i learned in the programmng course.</p> 
+                    <div class="item">
+                        <h4>High School</h4>
+                        <p>I finished my high school education at Alexandru Marghiloman High School in Buzău after 4 years.</p>                    
+                    </div>
+                    <div class="item">
+                        <h4>University</h4>
+                        <p>I am currently a student at Transilvania University of Brașov, Faculty of Computer Engineering and Computer Science.</p>
+                        <p>I am in year 2 of study.</p>
+                        <p>My favourite courses so far are Programming, Data Structures and Algorithms, Signals and Systems, Analog Electronics, Digital Electronics.</p>
+                        <p>The first course that really caught my attention was Programming since I've shown an interest in it since highschool.</p>
+                        <p>Data Structures and Algorithms is a course that I find very interesting because it helps me understand how to solve problems efficiently and digs deeper into what I learned in the programming course.</p> 
+                    </div>
                 </section>
+                <section id="experience">
+                    <h3>Experience</h3>
+                    <div class="item">
+                        <h4>Intership Program at Pentalog-Globant</h4>
+                        <p>Finished an intership program at Pentalog-Globant. Throughout this internship I studied at the Pentalog headquarters Scrum Frameworks and Agile Methodologies. Along with the other interns in my team and with the help of our supervisor we managed to learn how to use these theoretical concepts in real life situations.</p>
+                    </div>
+                    <div class="item">
+                        <h4>Extra Courses & Certifications</h4>
+                        <ul>
+                            <li><strong>Digital Competencies in Cybersecurity and Artificial Intelligence</strong> - Completed a specialized course in Cybersecurity and AI at Transilvania University of Brașov, supported by EU structural funds.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="projects">
+                    <h3>Projects</h3>
+                    <a href="https://github.com/Adelin12378/interactive-portofolio" target="_blank" rel="noopener noreferrer">
+                        <div class="project-item">
+                        <h4>Personal Portfolio Website<i class="fa-brands fa-github"></i></h4>
+                        <p>Developed a personal portfolio using HTML5, CSS3, and JavaScript.</p>
+                    </div>
+                    </a>
+                    <a href="https://github.com/Adelin12378/Mini-Monster-Adventure" target="_blank" rel="noopener noreferrer">
+                        <div class="project-item">
+                        <h4>Retro Pokemon Style Video Game<i class="fa-brands fa-github"></i></h4>
+                        <p>Created a demo for a retro-style Pokemon game with Java, using Object-Oriented Programming principles. I am working along with a teammate that handles the graphics so I can focus on the gameplay mechanics.</p>
+                    </div>
+                    </a>
+                    <a>
+                        <div class="project-item">
+                        <h4>Analog Fuzz Pedal Circuit for Electric Guitars<i class="fa-brands fa-github"></i></h4>
+                        <p>Designed a pedal circuit using a Schmitt trigger in LTSpice. I am currently working on building and testing the circuit on a breadboard.</p>
+                    </div>
+                    </a>
+                    <a href="https://github.com/Adelin12378/Protocoale-de-Comunicatii/tree/main/UART" target="_blank" rel="noopener noreferrer">
+                        <div class="project-item">
+                            <h4>Arduino Project<i class="fa-brands fa-github"></i></h4>
+                            <p>Developed an Arduino-based project to control LED lights using UART and a simple circuit during the Communication Protocols lab.</p>
+                        </div>
+                    </a>
+                    <a>
+                        <div class="project-item">
+                        <h4>Arduino Car<i class="fa-brands fa-github"></i></h4>
+                        <p>Built a remote-controlled car using an Arduino board and a ultrasonic sensor with two of my University classmates.</p>
+                    </div>
+                    </a>
+                </section>
+                <section id="skills">
+                <h3>Skills</h3>
+                
+                <div class="skills-category">
+                    <h4><i class="fa-solid fa-code"></i> Technical Proficiency</h4>
+                    <div class="skills-grid">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Object-Oriented Programming</span>
+                        <span class="skill-tag">Analog Electronics</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                <h4><i class="fa-solid fa-gears"></i> Tools & Others</h4>
+                <div class="skills-grid">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">IntelliJ IDEA</span>
+                </div>
+
+                <div class="skills-category">
+                    <h4><i class="fa-solid fa-list-check"></i> Workflow/Methodology</h4>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Scrum Framework</span>
+                        <span class="skill-tag">Agile Methodology</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h4><i class="fa-solid fa-users-gears"></i> Soft Skills</h4>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Analytical Thinking</span>
+                        <span class="skill-tag">Time Management</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h4><i class="fa-solid fa-language"></i> Languages</h4>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Romanian (Native)</span>
+                        <span class="skill-tag">English (Proficient)</span>
+                        </div>
+                </div>
+            </section>
+            </div>
                 <aside>
                     <h3>Hobbies</h3>
                     <p>Music, Video Games, Programming, Electronics, Ski</p>
                     <h3>Favourite Artists</h3>
-                    <p>LCD Soundsystem, Wu-Tang Clan, The Beatles, Eyehategod, Armand Hammer, Death Grips, Electric Wizard, Sade, Fugazi, NEU!, Can, David Bowie, Prince, The Stooges, Funkadelic, Miles Davis, D'Angelo, Crowbar</p>
+                    <p>LCD Soundsystem, Wu-Tang Clan, The Beatles, Eyehategod, Armand Hammer, Death Grips, Electric Wizard, Sade, Fugazi, NEU!, Can, David Bowie, Prince, The Stooges, Parliament-Funkadelic, Miles Davis, D'Angelo, Crowbar</p>
                     <h3>Favourite Albums</h3>
-                    <p>Heroes by David Bowie, Low by David Bowie, This is Happening by LCD Soundsystem, Love Deluxe by Sade, Abbey Road by The Beatles, Dopethrone by Electric Wizard, Lift Your Skinny Fists Like Antennas to Heaven by Godspeed You! Black Emperor, Bitches Brew by Miles Davis, Funhouse by The Stooges, Year of the Snitch by Death Grips, Supreme Clientele by Ghostface Killah aka Tony Starks aka Ghostdini</p>
+                    <p>Heroes by David Bowie, Low by David Bowie, De Todas Las Flores by Natalia Lafourcade, Renaissance by Beyoncé, The Passionate Ones by Nourished by Time, Showcase by Junior Delahaye, Super Ape by The Upsetters, This is Happening by LCD Soundsystem, Love Deluxe by Sade, Abbey Road by The Beatles, Dopethrone by Electric Wizard, Lift Your Skinny Fists Like Antennas to Heaven by Godspeed You! Black Emperor, Bitches Brew by Miles Davis, Funhouse by The Stooges, Year of the Snitch by Death Grips, Supreme Clientele by Ghostface Killah</p>
                     <h3>Favourite Movies</h3>
                     <p>Django (1965), The Good, The Bad and The Ugly, Once Upon a Time in the West, The Lighthouse, The Godfather, Punch Drunk Love, Eternal Sunshine of the Spotless Mind, Grave of the Fireflies, Howl's Moving Castle, Edward Scissorhands, Corpse Bride</p>
                 </aside>
@@ -81,11 +200,11 @@
                         <textarea id="message" name="mesaj" rows="4" required></textarea><br>
                         <p id="form-feedback"></p>
                         <button type="submit">Submit</button>
+                        <h4>Not functional yet</h4>
                     </form>
                     <p>&copy; 2026 Olteanu Ioan Adelin. All rights reserved.</p>
                 </footer>
         </header>
         <script src="script.js"></script>
-        <script src="array.js"></script>
     </body>
 </html>

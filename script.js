@@ -166,3 +166,14 @@ flipCard.addEventListener("mouseleave", () => {
         img.style.transform = `scale(1.1) translate(0, 0)`;
     });
 });
+
+window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    const loaderText = document.getElementById("loader-text");
+
+    loaderText.textContent = "Welcome!";
+
+    setTimeout(() => {
+        preloader.classList.add("fade-out");
+    }, 1000);
+});
