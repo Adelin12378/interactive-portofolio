@@ -15,7 +15,8 @@
     --secondary-color: #D4DFE2; 
     --background-color: #F4F1F8;
     --text-color: #4A4453;
-    --accent-glow: rgba(199, 177, 204, 0.3);
+    --grad-1: #e0c3fc;
+    --grad-2: #8ec5fc;
 }
 
 .img {
@@ -31,17 +32,20 @@
 }
 
 body.dark-mode {
-    --background-color: #2D2A32;
+    --background-color: #1a1a1c;
     --text-color: #E8E4EE;
-    --primary-color: #A58FAA;
-    --secondary-color: #454B52;
-    --accent-glow: rgba(165, 143, 170, 0.15);
+    --grad-1: #2d1b4d;
+    --grad-2: #1a2a3a;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    background: var(--background-color);
+    background-attachment: fixed;
+    background-image: 
+        radial-gradient(at 0% 0%, var(--grad-1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, var(--grad-2) 0px, transparent 50%);
+    animation: backgroundMove 20s ease infinite alternate;
+    overflow-x: hidden;
 }
 
 .hidden {
@@ -121,6 +125,8 @@ body {
 
 html {
     cursor: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body.dark-mode::before {
@@ -373,18 +379,48 @@ h1, h2, #greeting {
     margin: 40px auto;
 }
 
+nav {
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    
+    transition: all 0.4s ease;
+}
+
+body.dark-mode nav {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+}
+
 nav #list {
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    list-style: none;
-    padding: 20px 0;
+    justify-content: space-around;
+    align-items: center;
 }
 
 nav a {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background: rgba(199, 177, 204, 0.4);
 }
 
 #about ul {
@@ -583,12 +619,115 @@ body.dark-mode #projects a:hover .project-item {
     color: var(--text-color);
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
 }
 
 .fade-out {
     opacity: 0;
     visibility: hidden;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    min-height: 400px;
+}
+
+.reveal-text {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, var(--primary-color), #8ec5fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+.hero-visual {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column; text-align: center; }
+    .reveal-text { font-size: 2.5rem; }
+}
+
+.hero-visual.morph-visual {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(circle, rgba(199, 177, 204, 0.1) 0%, transparent 70%);
+}
+
+.morph-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.main-morph-path {
+    d: path("M20,60 C20,80 80,80 80,60 L80,30 L70,30 L70,10 L30,10 L30,30 L20,30 Z"); /* Simple Guitar body base */
+    animation: morphShapes 20s ease-in-out infinite;
+    transition: stroke 0.6s ease;
+}
+
+@keyframes morphShapes {
+    0%, 100% {
+        d: path("M25,50 C25,70 75,70 75,50 L75,15 L65,15 L65,5 L35,5 L35,15 L25,15 Z M50,15 L50,5");
+        stroke-width: 1.5;
+    }
+    30% {
+        d: path("M10,50 L25,50 L30,40 L35,60 L40,40 L45,60 L50,40 L55,60 L60,50 L90,50");
+        stroke-width: 2.5;
+    }
+    55% {
+        d: path("M10,50 L40,50 M40,30 L40,70 M60,30 L60,70 M60,50 L90,50");
+        stroke-width: 2;
+    }
+    80% {
+        d: path("M30,50 L50,50 M50,30 L50,70 M50,40 L70,25 M50,60 L70,75 M70,15 L70,35 M70,65 L70,85 M70,75 L80,75 L80,65 Z");
+        stroke-width: 2;
+    }
+}
+
+body.dark-mode .main-morph-path {
+    stroke-width: 1;
+}
+
+
+.music-note {
+    font-size: 1.2rem;
+    fill: var(--text-color);
+    opacity: 0.6;
+    font-family: Arial, sans-serif;
+    filter: blur(1px);
+}
+
+.music-note.n1 { animation: driftNote 12s linear infinite; }
+.music-note.n2 { animation: driftNote 15s linear infinite 2s; }
+.music-note.n3 { animation: driftNote 18s linear infinite 5s; }
+
+@keyframes driftNote {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0; }
+    100% { transform: translate(40px, -60px) rotate(30deg); opacity: 0; }
+}
+
+.morph-visual {
+    transition: transform 0.1s ease-out;
 }

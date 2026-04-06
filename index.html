@@ -22,15 +22,50 @@
             </div>
         </div>
         <header id="home">
-            <h1>Welcome to my Portfolio!</h1>
-            <br>
-            <h2>Name: Olteanu Ioan Adelin</h2>
-            <h2>University: University Transilvania of Brașov</h2>
-            <h2>Bachelor Degree: Computer Engineering and Computer Science</h2>
-            <h2>Year of Study: 2</h2>
-            <h2>Group: 4LF742</h2>
-            <h3 id="darkModeToggle">🌙 Dark Mode</h3>
-            <p id="greeting"></p>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="reveal-text">Olteanu Ioan Adelin</h1>
+                    <p class="hero-subtitle">University: University Transilvania of Brașov</p>
+                    <p class="hero-subtitle">Bachelor Degree: Computer Engineering and Computer Science</p>
+                    <p class="hero-badge">Year of Study: 2</p>
+                    <p id="darkModeToggle" class="hero-subtitle">🌙 Dark Mode</p>
+                    <p id="greeting" class="hero-subtitle"></p>
+                </div>
+                <div class="hero-visual morph-visual">
+                    <svg class="morph-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="morphGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:var(--grad-1);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:var(--grad-2);stop-opacity:1" />
+                            </linearGradient>
+                            
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+
+                        <path class="main-morph-path" 
+                            fill="none" 
+                            stroke="url(#morphGradient)" 
+                            stroke-width="1.5"
+                            stroke-linecap="round" 
+                            stroke-linejoin="round"
+                            filter="url(#glow)">
+                        </path>
+                        
+                        <g class="ambient-elements">
+                            <text x="15" y="25" class="music-note n1">♪</text>
+                            <text x="80" y="40" class="music-note n2">♫</text>
+                            <text x="30" y="80" class="music-note n3">♭</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            
             <br>
             <nav>
                 <list id="list">

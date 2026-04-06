@@ -177,3 +177,65 @@ window.addEventListener("load", () => {
         preloader.classList.add("fade-out");
     }, 1000);
 });
+
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(30px)";
+    section.style.transition = "all 0.8s ease-out";
+    observer.observe(section);
+});
+
+const morphVisual = document.querySelector(".morph-visual");
+
+if (morphVisual) {
+    document.addEventListener("mousemove", (e) => {
+        const screenCenterX = window.innerWidth / 2;
+        const screenCenterY = window.innerHeight / 2;
+        
+        const moveX = (e.clientX - screenCenterX) * 0.05;
+        const moveY = (e.clientY - screenCenterY) * 0.05;
+
+        morphVisual.style.transform = `perspective(1000px) rotateY(${moveX}deg) rotateX(${-moveY}deg) translateZ(10px)`;
+    });
+    
+    document.addEventListener("mouseleave", () => {
+        morphVisual.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0px)";
+    });
+}
+
+
+flipCard = document.querySelector(".flip-card");
+cardImages = flipCard.querySelectorAll("img");
+
+if (flipCard && cardImages.length > 0) {
+    flipCard.addEventListener("mousemove", (e) => {
+        const rect = flipCard.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        const moveX = x * -20; 
+        const moveY = y * -20;
+
+        cardImages.forEach(img => {
+            img.style.transform = `scale(1.1) translate(${moveX}px, ${moveY}px)`;
+        });
+    });
+
+    flipCard.addEventListener("mouseleave", () => {
+        cardImages.forEach(img => {
+            img.style.transform = `scale(1.1) translate(0, 0)`;
+        });
+    });
+}
