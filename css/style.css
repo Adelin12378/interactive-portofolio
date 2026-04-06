@@ -400,9 +400,10 @@ nav {
 }
 
 body.dark-mode nav {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    background: rgba(20, 20, 25, 0.7);
+    border: 1px solid rgba(199, 177, 204, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), 
+                0 0 15px rgba(199, 177, 204, 0.1); 
 }
 
 nav #list {
@@ -680,14 +681,15 @@ body.dark-mode #projects a:hover .project-item {
 }
 
 .main-morph-path {
-    d: path("M20,60 C20,80 80,80 80,60 L80,30 L70,30 L70,10 L30,10 L30,30 L20,30 Z"); /* Simple Guitar body base */
     animation: morphShapes 20s ease-in-out infinite;
     transition: stroke 0.6s ease;
+    filter: drop-shadow(0 0 5px rgba(199, 177, 204, 0.5));
+    transition: filter 0.5s ease;
 }
 
 @keyframes morphShapes {
     0%, 100% {
-        d: path("M25,50 C25,70 75,70 75,50 L75,15 L65,15 L65,5 L35,5 L35,15 L25,15 Z M50,15 L50,5");
+        d: path("M30,25 L30,75 L75,50 Z M10,35 L30,35 M10,65 L30,65 M75,50 L95,50 M35,35 L43,35 M35,65 L43,65 M39,61 L39,69");
         stroke-width: 1.5;
     }
     30% {
@@ -699,15 +701,27 @@ body.dark-mode #projects a:hover .project-item {
         stroke-width: 2;
     }
     80% {
-        d: path("M30,50 L50,50 M50,30 L50,70 M50,40 L70,25 M50,60 L70,75 M70,15 L70,35 M70,65 L70,85 M70,75 L80,75 L80,65 Z");
-        stroke-width: 2;
+        d: path("M15,50 L40,50 M40,30 L40,70 M40,45 L70,20 M40,55 L65,80 L52,78 M65,80 L62,65");
+        stroke-width: 2.5;
     }
 }
 
 body.dark-mode .main-morph-path {
-    stroke-width: 1;
+    filter: drop-shadow(0 0 2px #fff) 
+            drop-shadow(0 0 10px var(--primary-color)) 
+            drop-shadow(0 0 20px var(--grad-2));
+    stroke-width: 1.8;
 }
 
+body.dark-mode .music-note {
+    fill: var(--primary-color);
+    filter: blur(1px) drop-shadow(0 0 5px var(--primary-color));
+    opacity: 0.4;
+}
+
+body.dark-mode .reveal-text {
+    text-shadow: 0 0 20px rgba(199, 177, 204, 0.3);
+}
 
 .music-note {
     font-size: 1.2rem;
